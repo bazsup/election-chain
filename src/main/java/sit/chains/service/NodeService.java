@@ -13,7 +13,7 @@ public class NodeService {
     private RestTemplate restTemplate = new RestTemplate();
 
     public void boardcasatPost(String endpoint, Object data) throws IOException {
-        this.getKnownNodes().parallelStream().forEach(node -> restTemplate.postForLocation(node + "/" + endpoint, data));
+        this.getKnownNodes().parallelStream().forEach(node -> restTemplate.postForLocation(node + "/" + endpoint + "/", data));
     }
 
     public List<String> getKnownNodes() throws IOException {
